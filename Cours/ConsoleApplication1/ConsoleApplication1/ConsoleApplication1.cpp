@@ -2,11 +2,37 @@
 //
 
 #include "pch.h"
-#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+
+struct Vec3
+{
+	float x;
+	float y;
+	float z;
+}; 
+
+int appel(int & s)
+{
+	s++;
+	return s;
+}
+
+Vec3 incrX(Vec3 _in) 
+{
+	_in.x++;
+	return _in;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	//Vec3 toto;
+	int x = 66;
+	x = appel(x);
+	printf("xval : %d\n", x);
+	Vec3 toto = { 1,2,3 };
+	incrX(toto);
+	printf("xval : %f\n", toto.x);
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
@@ -19,3 +45,15 @@ int main()
 //   4. Utilisez la fenêtre Liste d'erreurs pour voir les erreurs.
 //   5. Accédez à Projet > Ajouter un nouvel élément pour créer des fichiers de code, ou à Projet > Ajouter un élément existant pour ajouter des fichiers de code existants au projet.
 //   6. Pour rouvrir ce projet plus tard, accédez à Fichier > Ouvrir > Projet et sélectionnez le fichier .sln.
+
+
+/*int foo = 0;
+	const char * label = "sapin";
+	const char label2[5] = { 's', 'a', 'p', 'i', 'n'};
+	float y = 0.5f;
+	double ff = 0.5f;
+
+	printf("Hello world this is a text : %d label : %s %f\n", foo, label, 66.66f);
+	printf("Hello world this is a text : %d fration : %s %f\n", { (float) }1.0 66.66f);
+	printf("Hello world this is a text : %d fration : %s %f\n", { (double) } 66.66f);
+	printf("hello world : l2 : %s\n", label2);*/
