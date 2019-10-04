@@ -1,0 +1,33 @@
+Trailers : 1-Ruiner, 2-Furi, 3-Mother Russia Bleeds, 4-Journey, 5-Gris
+
+Couleur
+
+1	Beaucoup de rouges -> sang, couleur froides -> insécurité
+2	Couleur chaudes mais qui n'aggressent pas, couleurs assez froides pour les personnages ennemis, lumières "néons" très 80's
+3	Beaucoup de rouge -> sang -> aggressivité des personnages
+4	Couleurs chaudes apaisante, couleurs froides qui ne montrent pas de signes de dangers
+5	Couleur très froides -> tristesse du monde, quelques couleurs chaudes pour accentuer les couleurs froides
+
+Son
+
+1	Musique angoissante
+2	Musique énergique et entraînante, qui donne envie de se battre contre le monde -> très univers cyberpunk
+3	Musique electro (cf musique Furi)
+4	Musique calme, chill
+5	Musique cakle, triste
+
+Emotion
+
+1	Danger & insécurité ----> me fait penser à Tokyo Dark (pour l'ambience globale et sonore)
+2	Sentiment de puissance et de maitrise de l'environnement
+3	Sentiment de rébellion
+4	Contemplatif, observation d'un monde agréable
+5	Contemplatif, regard sur un monde en ruines
+
+Gameplay
+
+1	Shoot'em all
+2	Beat'em all
+3	Beat'em all
+4	Exploration & découverte
+5	Plateforme & énigmes & exploration
