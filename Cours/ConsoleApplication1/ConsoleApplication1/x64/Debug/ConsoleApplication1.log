@@ -1,0 +1,13 @@
+﻿  ConsoleApplication1.cpp
+c:\workspace\florian\hae_florian_gp2\cours\consoleapplication1\consoleapplication1\consoleapplication1.cpp(54): warning C4477: 'printf' : la chaîne de format '%f' nécessite un argument de type 'double', mais l'argument variadique 1 est de type 'int'
+c:\workspace\florian\hae_florian_gp2\cours\consoleapplication1\consoleapplication1\consoleapplication1.cpp(56): warning C4477: 'printf' : la chaîne de format '%f' nécessite un argument de type 'double', mais l'argument variadique 1 est de type 'Vec3'
+c:\workspace\florian\hae_florian_gp2\cours\consoleapplication1\consoleapplication1\consoleapplication1.cpp(92): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 1 est de type '_Rep'
+          with
+          [
+              _Rep=__int64
+          ]
+  c:\workspace\florian\hae_florian_gp2\cours\consoleapplication1\consoleapplication1\consoleapplication1.cpp(92): note: utilisez '%lld' dans la chaîne de format
+  c:\workspace\florian\hae_florian_gp2\cours\consoleapplication1\consoleapplication1\consoleapplication1.cpp(92): note: utilisez '%Id' dans la chaîne de format
+  c:\workspace\florian\hae_florian_gp2\cours\consoleapplication1\consoleapplication1\consoleapplication1.cpp(92): note: utilisez '%I64d' dans la chaîne de format
+c:\workspace\florian\hae_florian_gp2\cours\consoleapplication1\consoleapplication1\consoleapplication1.cpp(33): warning C4717: 'stackOverflow' : récurrent sur tous les chemins d'accès de contrôle, la fonction entraînera un dépassement de capacité de la pile d'exécution
+  ConsoleApplication1.vcxproj -> C:\Workspace\Florian\HAE_Florian_GP2\Cours\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
