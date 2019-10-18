@@ -22,7 +22,6 @@ bool IntArray::ensure(int size) {
 	for (int i = 0; i < size; ++i) newdata[i] = 0;
 	for (int i = 0; i < curSize; i++)
 		newdata[i] = data[i];
-
 	delete(data);
 	data = newdata;
 
