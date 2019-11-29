@@ -1,7 +1,6 @@
 #version 120
 uniform sampler2D texture;
 uniform float time;
-uniform float moving;
 
 void main() {
     vec2 coord = gl_TexCoord[0].xy;

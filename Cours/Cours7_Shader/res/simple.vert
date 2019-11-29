@@ -6,7 +6,8 @@ void main()
 {
 	vec4 vert = gl_Vertex;
 
-	vert.x += time * 300.0;
+	//vert.x += time * 200.0;
+	//vert.y += time * 100.0;
     // transform the vertex position
     gl_Position = gl_ModelViewProjectionMatrix * vert;
 

@@ -1,38 +1,10 @@
 ﻿  Cours4.cpp
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(34): warning C4244: 'return' : conversion de 'double' en 'float', perte possible de données
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(59): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(60): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(61): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(62): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(63): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(64): warning C4244: 'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(73): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(114): warning C4305: 'argument' : troncation de 'double' à 'float'
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(114): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(116): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(127): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(150): warning C4305: 'argument' : troncation de 'double' à 'float'
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(150): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(152): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(156): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(183): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(185): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(189): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(200): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(21): warning C4305: 'argument' : troncation de 'unsigned int' à 'sf::Uint8'
+c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(21): warning C4309: 'argument' : troncation de valeur de constante
+c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(218): warning C4474: 'printf' : trop d'arguments passés pour la chaîne de format
+  c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(218): note: les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
+c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(315): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(316): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(329): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+c:\workspace\florian\hae_florian_gp2\cours\cours7_shader\cours4.cpp(332): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
   Cours4.vcxproj -> C:\Workspace\Florian\HAE_Florian_GP2\Cours\Cours7_Shader\Debug\App.exe
