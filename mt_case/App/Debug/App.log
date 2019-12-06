@@ -1,0 +1,62 @@
+﻿  App.cpp
+c:\workspace\florian\hae_florian_gp2\mt_case\app\fadingparticle.h(18): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\florian\hae_florian_gp2\mt_case\app\app.cpp(207): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\florian\hae_florian_gp2\mt_case\app\app.cpp(210): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\florian\hae_florian_gp2\mt_case\app\app.cpp(211): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\florian\hae_florian_gp2\mt_case\app\app.cpp(215): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\florian\hae_florian_gp2\mt_case\app\app.cpp(218): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\florian\hae_florian_gp2\mt_case\app\app.cpp(219): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\florian\hae_florian_gp2\mt_case\app\app.cpp(236): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\florian\hae_florian_gp2\mt_case\app\app.cpp(302): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\florian\hae_florian_gp2\mt_case\app\app.cpp(353): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\florian\hae_florian_gp2\mt_case\app\app.cpp(359): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\florian\hae_florian_gp2\mt_case\app\app.cpp(374): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\florian\hae_florian_gp2\mt_case\app\app.cpp(375): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\florian\hae_florian_gp2\mt_case\app\app.cpp(388): warning C4244: 'argument' : conversion de 'double' en 'float32', perte possible de données
+  Game.cpp
+  Lib.cpp
+c:\workspace\florian\hae_florian_gp2\mt_case\app\lib.cpp(106): warning C4244: '/=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\florian\hae_florian_gp2\mt_case\app\lib.cpp(107): warning C4244: '/=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\florian\hae_florian_gp2\mt_case\app\lib.cpp(136): warning C4244: 'argument' : conversion de 'double' en 'float32', perte possible de données
+  Génération de code en cours...
+  App.vcxproj -> C:\Workspace\Florian\HAE_Florian_GP2\mt_case\App\Debug\App.exe
