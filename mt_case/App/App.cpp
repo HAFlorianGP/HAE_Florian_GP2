@@ -1,15 +1,12 @@
-// App.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
-//
-
-
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <direct.h>
 #include <functional>
-
+#include <functional>
 #include "Lib.hpp"
 #include "Game.hpp"
 #include "Particle.h"
+#include "Entity.hpp"
 #include "FadingParticle.h"
 #include "Action.hpp"
 #include <Box2D/Box2D.h>
@@ -105,8 +102,6 @@ static void blur(float dx, sf::Texture* source, sf::Shader*_blurShader, sf::Rend
 }
 
 static sf::Texture * whiteTex = nullptr;
-
-
 
 static Vector2f p0;
 static Vector2f p1;
@@ -218,6 +213,9 @@ int main() {
 	walls[3].setPosition(0, winHeight - 1);
 	walls[3].setSize(Vector2f(winWidth, 16));
 
+	g.Init();
+
+
 	while (window.isOpen())//on passe tout le temps DEBUT DE LA FRAME 
 	{
 		sf::Event event;//recup les evenement clavier/pad
@@ -230,6 +228,15 @@ int main() {
 
 			switch (event.type ) {
 
+			case sf::Event::MouseButtonPressed:
+			{
+				auto CW = Entity::CELL_WIDTH;
+				int cx = mousePos.x / CW;
+				int cy = mousePos.y / CW;
+
+				Game::me->togglePlatform(cx, cy);
+				break;
+			}
 				case sf::Event::MouseMoved :
 				{
 					int life = 30;
@@ -243,29 +250,26 @@ int main() {
 						p->life = 30;
 						p->speed.y = sp;
 						p->bhv = Particle::applySpeed;
-						g.pvec.push_back(p);
-						
+						g.pvec.push_back(p);						
 					}
 
 					{
 						auto c = new CircleShape( 2,32);
 						c->setOrigin(2, 2);
 						c->setPosition(mousePos);
-						c->setFillColor(sf::Color(0xE88A38ff));
+						c->setFillColor(sf::Color::Cyan);
 
 						auto p = new FadingParticle(c);
 						p->life = 30;
 						p->speed.y = sp;
 						p->bhv = Particle::applySpeed;
 						g.pvec.push_back(p);
-					}
-					
+					}					
 					break;
 				}
 
 				case sf::Event::Resized:
-					initialView.setSize({
-									   static_cast<float>(event.size.width),
+					initialView.setSize({static_cast<float>(event.size.width),
 									   static_cast<float>(event.size.height)
 						});
 					window.setView(initialView);
@@ -280,48 +284,40 @@ int main() {
 					destFinal->clear(sf::Color(0, 0, 0, 0));
 					break;
 
-				case sf::Event::KeyReleased:
-					
+				case sf::Event::KeyReleased:					
 					break;
-
 				case sf::Event::KeyPressed:
-					if (event.key.code == sf::Keyboard::F1) {
+					/*if (event.key.code == sf::Keyboard::F1) {
 						p0.x = mousePos.x;
 						p0.y = mousePos.y;
 						showSegment++;
 					}
-
 					if (event.key.code == sf::Keyboard::F2) {
 						p1.x = mousePos.x;
 						p1.y = mousePos.y;
 						showSegment++;
-					}
-
+					}*/
 					if (event.key.code == sf::Keyboard::Space) {
 						mainView = initialView;
 						mainView.move(Vector2f(Lib::dice(-8, 8), Lib::dice(-8, 8)));
 						window.setView(mainView);
 					}
 					break;
-
 				case sf::Event::Closed:
 					window.close();
 					break;
-
 				default:
 					break;
 			}
-		}
-
-		
+		}	
 
 		sf::Time dt = deltaClock.restart();
 
-		const int squareSpeed = 3;
+		const int squareSpeed = 3;	
 
-		myFpsCounter.setPosition(8, 8);
+		/*myFpsCounter.setPosition(8, 8);
 		myFpsCounter.setFillColor(sf::Color(0xE88A387f));
-		myFpsCounter.setFont(*font);
+		myFpsCounter.setFont(*font);*/
 
 		if (every == 0) {
 			myFpsCounter.setString(std::string("FPS:") + std::to_string(fps[(step - 1) % 4]));
@@ -376,18 +372,15 @@ int main() {
 				lp.setFillColor(sf::Color(0, 255, 0, 255));
 				lp.setPosition(inter.x, inter.y);
 				window.draw(lp);
-
 				{
 					sf::VertexArray line(sf::LineStrip);
 					line.append(sf::Vertex(Vector2f(inter.x, inter.y), sf::Color(255, 0, 0, 255)));
 					line.append(sf::Vertex(Vector2f(inter.x + normal.x * 30, inter.y + normal.y * 30), sf::Color(255, 0, 0, 255)));
 					window.draw(line);
 				}
-
 				b2Vec2 startToInter = inter - b2Vec2(p0.x, p0.y);
 				b2Vec2 refl = startToInter - 2 * Lib::dot(startToInter, normal) * normal;
 				b2Vec2 endRefl = inter + refl;
-
 				{
 					sf::VertexArray line(sf::LineStrip);
 					line.append(sf::Vertex(Vector2f(inter.x, inter.y), sf::Color(255, 255, 0, 255)));
@@ -396,7 +389,6 @@ int main() {
 				}
 			}
 		}
-
 		g.draw(window);
 
 		for (int i = 0; i < 4; ++i) {
@@ -439,7 +431,5 @@ int main() {
 
 		step++;
 	}
-
-
 	return 0;
 }
