@@ -8,16 +8,19 @@
 class Particle {
 public:
 
+	Vector2f dir;
 	sf::Shape * spr;
 	Vector2f speed;
 
-	int life = 100;
+	int life = 3000;
 	bool killed = false;
 
 	std::function<void(Particle*)> bhv;
 
+
 	Particle(sf::Shape * spr) {
 		this->spr = spr;
+		dir.y = 1;
 	}
 
 	~Particle() {
@@ -37,8 +40,8 @@ public:
 		win.draw(*spr);
 	}
 
-	void applySpeed() {
-		Vector2f pos = spr->getPosition();
-		spr->setPosition(pos.x + speed.x, pos.y + speed.y);
+	static void applySpeed(Particle*p) {
+		Vector2f pos = p->spr->getPosition();
+		p->spr->setPosition(pos.x + p->speed.x, pos.y + p->speed.y);
 	}
 };

@@ -5,6 +5,10 @@
 #include <direct.h>
 #include <functional>
 #include <Box2D/Box2D.h>
+#include "JeuTank.hpp"
+#include "Entity.hpp"
+#include "Entity.hpp"
+#include <SFML/Graphics.hpp>
 
 using namespace sf;
 
@@ -71,27 +75,6 @@ void drawCurve(sf::RenderWindow &win, float now) {
 		double x = ofsX + stride * i;
 		double y = 400;
 
-		//y += (ratio*ratio*1.33)* sin( ratio * now * 8.0) * 256 + rd() * 8;
-
-		//x = 500 + cos(ratio * 2 * 3.141569) * (now * 20);
-		//y = 500 + sin(ratio * 2 * 3.141569) * ( now * 20);
-
-		//x = 500 + cos(ratio * 2 * 3.141569) * ( now * now * 20 * (0.5 + rd() * 0.5));
-		//y = 500 + sin(ratio * 2 * 3.141569) * (now * now * 20 * (0.5 + rd() * 0.5));
-
-		//y += sin(now) * 200;
-		//y += ratio * ratio * sin(ratio * 8.0 + now) * 256;
-
-		//y += sin(ratio * 8.0 + now * 1.5) * 120;
-
-		//y += sin(ratio * 8.0 + now) * (128 * 1.0 + cos(now*16) * 4);
-
-		/*int radius = 160;
-		x = 500 + radius * cos( ratio * 2 * 3.141569) + sin(now*10 * cos(ratio)) * 8 * (1.0 + rd() * 100);
-		y = 500 + radius * sin( ratio * 2 * 3.141569) + cos(now * 10 * sin(ratio)) * 10 * (1.0 + rd() * 100);*/
-		/*sf::Color c = sf::Color(lerp(blue.r, red.r,ratio), lerp(blue.g, red.g, ratio), lerp(blue.b, red.b, ratio));
-		//sf::Color c = i % 2 ? red : blue;*/
-
 		sf::Color c = hsv(ratio * 360, 0.8, 0.8);
 
 		sf::Vertex vertex(Vector2f(x, y), c);
@@ -111,59 +94,6 @@ static void drawBox2D(sf::RenderWindow &win)
 	b2PolygonShape LimitsPolygon;
 	LimitsPolygon.Set(vertices, count);
 }
-
-/*void drawCatmull(sf::RenderWindow &win, float now) {
-	sf::VertexArray va(sf::LineStrip);
-	sf::Color red = sf::Color::Red;
-	sf::Color blue = sf::Color::Blue;
-	int nb = 320;
-	float stride = 1280.0 / nb;
-	std::vector<Vector2f> points;
-
-
-	points.push_back(Vector2f(0,0));
-	points.push_back(Vector2f(80, 150));
-	points.push_back(Vector2f(600, 300));
-	points.push_back(Vector2f(100, 600));
-	points.push_back(Vector2f(1280, 720));
-
-	for (int i = 0; i < 4; i++) {
-		points.push_back(mousePos[i]);
-	}
-
-	sf::CircleShape shape(16, (int)(2 * 3.141569 * 100));
-	shape.setOrigin(Vector2f(16, 16));
-	shape.setPosition(0, 0);
-	shape.setFillColor(sf::Color(0xE884D4ff));
-
-	for (int i = 0; i < nb + 1; ++i) {
-		double ratio = 1.0 * i / nb;
-		double x = 0.0;
-		double y = 0.0;
-		sf::Color c = hsv(ratio * 360, 0.8, 0.8);
-
-		Vector2f pos = Lib::plot2(ratio, points);
-		x = pos.x;
-		y = pos.y;
-
-		sf::Vertex vertex(Vector2f(x, y), c);
-		va.append(vertex);
-	}
-
-	static float cRatio = 0.0;
-	static bool autoreverse = false;
-	Vector2f pos = Lib::plot2(autoreverse ? cRatio : (1 - cRatio), points);
-	shape.setPosition(pos);
-
-	cRatio += 0.001f;
-	if (cRatio > 1.0) {
-		cRatio = 0.0;
-		autoreverse = !autoreverse;
-	}
-
-	win.draw(va);
-	win.draw(shape);
-}*/
 
 static RectangleShape	* sh = nullptr;
 static Vector2f			shPos;
@@ -200,47 +130,28 @@ static void drawMovingSquare(sf::RenderWindow& win) {
 	win.draw(*shTarget);
 }
 
-class Particle {
-public:
+bool Game::willCollide(Entity * end, int cx, int cy)
+{
+	int cScreenWidth = 1280;
+	int cScreenHeight = 720;
 
-	sf::Shape * spr;
-	Vector2f dir;
+	if (cx < 0) return true;
+	else if (cx >= cScreenWidth) return true;
 
-	int life = 3000;
-	bool killed = false;
+	if (cy < 0) return true;
+	else if (cy >= cScreenHeight) return true;
 
-	std::function<void(Particle*)> bhv;
+	for (Vector2i & cell : platforms)
+		if (cell.x == cx && cell.y == cy)
+			return true;
 
-	Particle(sf::Shape * spr) {
-		this->spr = spr;
-		dir.y = 1;
-	}
+	return false;
+}
 
-	~Particle() {
-		delete(spr);
-		spr = nullptr;
-	}
+static Vector2f p0;
+static Vector2f p1;
 
-	void update() {
-		if (bhv) {
-			bhv(this);
-		}
-		life--;
-		if (life == 0) killed = true;
-	}
-
-	void draw(RenderWindow & win) {
-		win.draw(*spr);
-	}
-};
-
-/*static void collision()
-	{
-		sf::FloatRect boundingBox = sh.getGlobalBounds();
-		if (boundingBox.intersects(LimitsShape)) {
-			printf("hit the wall");
-		}
-	}*/
+static RectangleShape shp;
 
 static RectangleShape walls[4];
 
@@ -271,8 +182,42 @@ int main()
 	if (font->loadFromFile("res/Orbitron-Bold.ttf") == false) {
 		printf("no such font\n");
 	}
+	double len = Lib::v2Len(p1 - p0);
+	sf::RectangleShape sh(Vector2f(1, len));
+	sh.setFillColor(sf::Color(255, 0, 127, 255));
+	sh.setOrigin(0.5, 0.0);
+	sh.setPosition(p0.x, p0.y);
+	double angle = atan2(p1.y - p0.y, p1.x - p0.x);
+	angle -= Lib::PI * 0.5;
+	sh.setRotation(angle / (2.0 * 3.14156) * 360.0);
 
-
+	Vector2f speed = p1 - p0;
+	b2Vec2 inter;
+	b2Vec2 normal;
+	if (Lib::willCollide(p0, speed, &shp, inter, normal)) {
+		auto dotSize = 8;
+		sf::RectangleShape lp;
+		lp.setOrigin(dotSize*0.5, dotSize*0.5);
+		lp.setSize(Vector2f(dotSize, dotSize));
+		lp.setFillColor(sf::Color(0, 255, 0, 255));
+		lp.setPosition(inter.x, inter.y);
+		window.draw(lp);
+		{
+			sf::VertexArray line(sf::LineStrip);
+			line.append(sf::Vertex(Vector2f(inter.x, inter.y), sf::Color(255, 0, 0, 255)));
+			line.append(sf::Vertex(Vector2f(inter.x + normal.x * 30, inter.y + normal.y * 30), sf::Color(255, 0, 0, 255)));
+			window.draw(line);
+		}
+		b2Vec2 startToInter = inter - b2Vec2(p0.x, p0.y);
+		b2Vec2 refl = startToInter - 2 * Lib::dot(startToInter, normal) * normal;
+		b2Vec2 endRefl = inter + refl;
+		{
+			sf::VertexArray line(sf::LineStrip);
+			line.append(sf::Vertex(Vector2f(inter.x, inter.y), sf::Color(255, 255, 0, 255)));
+			line.append(sf::Vertex(Vector2f(endRefl.x, endRefl.y), sf::Color(255, 255, 0, 255)));
+			window.draw(line);
+		}
+	}
 
 	std::vector< Particle * > vec;
 
@@ -339,9 +284,9 @@ int main()
 			if (shDir.x == 0 && shDir.y == 0) shDir.y = 1;
 
 			RectangleShape * pr = new RectangleShape(Vector2f(8, 8));
-			pr->setFillColor(Color(0xEB3922ff));
+			pr->setFillColor(Color::Blue);
 			pr->setOrigin(4, 4);
-			pr->setPosition(sh->getPosition());
+			//pr->setPosition(sh->getPosition());
 			Particle * p = new Particle(pr);
 
 			float shDirLen = sqrt(shDir.x*shDir.x + shDir.y*shDir.y);
@@ -355,7 +300,7 @@ int main()
 			};
 			vec.push_back(p);
 		}
-		sh->setPosition(shPos);
+	//	sh->setPosition(shPos);
 
 
 		myFpsCounter.setPosition(8, 8);
@@ -418,28 +363,6 @@ int main()
 		walls[3].setFillColor(sf::Color::Yellow);
 		walls[3].setPosition(0, winHeight - 1);
 		walls[3].setSize(Vector2f(winWidth, 16));
-
-		{
-			int nb = 8;
-			for (int i = 0; i < nb; ++i) {
-				Shape* sh = new sf::CircleShape(16);
-				sh->setOrigin(16, 16);
-				//auto angle = Lib::rd() * 3.14156;
-				auto angle = 1.0 * i / nb * 3.14156 * 2;
-				float dx = cos(angle) * 180.0f;
-				float dy = sin(angle) * 180.0f;
-				Particle * p = new Particle(sh);
-				p->life = 1000000;
-
-				sh->setPosition(winWidth*0.5 + dx, winHeight * 0.5 + dy);
-				sh->setFillColor(sf::Color(200, 0, 0, 255));
-
-				p->bhv = [](Particle* p) {
-
-				};
-				vec.push_back(p);
-			}
-		}
 
 		drawBox2D(window);
 	}

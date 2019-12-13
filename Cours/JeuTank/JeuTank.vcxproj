@@ -257,7 +257,9 @@
     <ClInclude Include="..\..\..\Box2D\Box2D\Dynamics\Joints\b2WeldJoint.h" />
     <ClInclude Include="..\..\..\Box2D\Box2D\Dynamics\Joints\b2WheelJoint.h" />
     <ClInclude Include="..\..\..\Box2D\Box2D\Rope\b2Rope.h" />
-    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Collider.hpp" />
+    <ClInclude Include="Entity.hpp" />
+    <ClInclude Include="JeuTank.hpp" />
     <ClInclude Include="Lib.hpp" />
     <ClInclude Include="Particle.h" />
   </ItemGroup>
@@ -354,6 +356,7 @@
     <ClCompile Include="..\..\..\Box2D\Box2D\Dynamics\Joints\b2WeldJoint.cpp" />
     <ClCompile Include="..\..\..\Box2D\Box2D\Dynamics\Joints\b2WheelJoint.cpp" />
     <ClCompile Include="..\..\..\Box2D\Box2D\Rope\b2Rope.cpp" />
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="JeuTank.cpp" />
     <ClCompile Include="Lib.cpp" />
   </ItemGroup>
