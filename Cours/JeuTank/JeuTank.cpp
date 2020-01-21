@@ -1,4 +1,3 @@
-
 #include "Lib.hpp"
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -75,12 +74,94 @@ void drawCurve(sf::RenderWindow &win, float now) {
 		double x = ofsX + stride * i;
 		double y = 400;
 
+		//y += (ratio*ratio*1.33)* sin( ratio * now * 8.0) * 256 + rd() * 8;
+
+		//x = 500 + cos(ratio * 2 * 3.141569) * (now * 20);
+		//y = 500 + sin(ratio * 2 * 3.141569) * ( now * 20);
+
+		//x = 500 + cos(ratio * 2 * 3.141569) * ( now * now * 20 * (0.5 + rd() * 0.5));
+		//y = 500 + sin(ratio * 2 * 3.141569) * (now * now * 20 * (0.5 + rd() * 0.5));
+
+		//y += sin(now) * 200;
+		//y += ratio * ratio * sin(ratio * 8.0 + now) * 256;
+
+		y += sin(ratio * 8.0 + now * 1.5) * 120;
+
+		//y += sin(ratio * 8.0 + now) * (128 * 1.0 + cos(now*16) * 4);
+
+		/*
+		int radius = 160;
+		x = 500 + radius * cos( ratio * 2 * 3.141569) + sin(now*10 * cos(ratio)) * 8 * (1.0 + rd() * 100);
+		y = 500 + radius * sin( ratio * 2 * 3.141569) + cos(now * 10 * sin(ratio)) * 10 * (1.0 + rd() * 100);
+		*/
+		/*
+	sf::Color c = sf::Color(
+		lerp(blue.r, red.r,ratio),
+		lerp(blue.g, red.g, ratio),
+		lerp(blue.b, red.b, ratio)
+	);
+	*/
+	//sf::Color c = i % 2 ? red : blue;
+
 		sf::Color c = hsv(ratio * 360, 0.8, 0.8);
 
 		sf::Vertex vertex(Vector2f(x, y), c);
 		va.append(vertex);
 	}
 	win.draw(va);
+}
+
+void drawCatmull(sf::RenderWindow &win, float now) {
+	sf::VertexArray va(sf::LineStrip);
+	sf::Color red = sf::Color::Red;
+	sf::Color blue = sf::Color::Blue;
+	int nb = 320;
+	float stride = 1280.0 / nb;
+	std::vector<Vector2f> points;
+
+	/*
+	points.push_back(Vector2f(0,0));
+	points.push_back(Vector2f(80, 150));
+	points.push_back(Vector2f(600, 300));
+	points.push_back(Vector2f(100, 600));
+	points.push_back(Vector2f(1280, 720));
+	*/
+	for (int i = 0; i < 4; i++) {
+		points.push_back(mousePos[i]);
+	}
+
+	sf::CircleShape shape(16, (int)(2 * 3.141569 * 100));
+	shape.setOrigin(Vector2f(16, 16));
+	shape.setPosition(0, 0);
+	shape.setFillColor(sf::Color(0xE884D4ff));
+
+	for (int i = 0; i < nb + 1; ++i) {
+		double ratio = 1.0 * i / nb;
+		double x = 0.0;
+		double y = 0.0;
+		sf::Color c = hsv(ratio * 360, 0.8, 0.8);
+
+		Vector2f pos = Lib::plot2(ratio, points);
+		x = pos.x;
+		y = pos.y;
+
+		sf::Vertex vertex(Vector2f(x, y), c);
+		va.append(vertex);
+	}
+
+	static float cRatio = 0.0;
+	static bool autoreverse = false;
+	Vector2f pos = Lib::plot2(autoreverse ? cRatio : (1 - cRatio), points);
+	shape.setPosition(pos);
+
+	cRatio += 0.001f;
+	if (cRatio > 1.0) {
+		cRatio = 0.0;
+		autoreverse = !autoreverse;
+	}
+
+	win.draw(va);
+	win.draw(shape);
 }
 
 static void drawBox2D(sf::RenderWindow &win)
@@ -239,13 +320,13 @@ int main()
 					printf("fps %f\n", 0.25f*(fps[0] + fps[1] + fps[2] + fps[3]));
 				break;
 
-				/*case sf::Event::KeyPressed:
+				case sf::Event::KeyPressed:
 				{
 					if (event.key.code == sf::Keyboard::F1) mousePos[0] = sf::Vector2f(sf::Mouse::getPosition(window));
 					if (event.key.code == sf::Keyboard::F2) mousePos[1] = sf::Vector2f(sf::Mouse::getPosition(window));
 					if (event.key.code == sf::Keyboard::F3) mousePos[2] = sf::Vector2f(sf::Mouse::getPosition(window));
 					if (event.key.code == sf::Keyboard::F4) mousePos[3] = sf::Vector2f(sf::Mouse::getPosition(window));
-				}*/
+				}
 				break;
 
 			case sf::Event::Closed:
@@ -259,28 +340,45 @@ int main()
 
 		const int squareSpeed = 5;
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-			shPos.x -= squareSpeed;
-			shDir.x = -1;
-			shDir.y = 0;
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-			shPos.x += squareSpeed;
-			shDir.x = 1;
-			shDir.y = 0;
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
-			shPos.y -= squareSpeed;
-			shDir.x = 0;
-			shDir.y = -1;
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-			shPos.y += squareSpeed;
-			shDir.x = 0;
-			shDir.y = 1;
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+			if (shDir.x == 0 && shDir.y == 0) shDir.y = 1;
+			
+			RectangleShape * pr = new RectangleShape(Vector2f(8, 8));
+			pr->setFillColor(Color::Blue);
+			pr->setOrigin(4, 4);
+			//pr->setPosition(sh->getPosition());
+			Particle * p = new Particle(pr);
+
+			float shDirLen = sqrt(shDir.x*shDir.x + shDir.y*shDir.y);
+			p->dir.x = shDir.x / shDirLen;
+			p->dir.y = shDir.y / shDirLen;
+			p->bhv = [](Particle * part) {
+				Vector2f ppos = part->spr->getPosition();
+				ppos.x += part->dir.x * 6;
+				ppos.y += part->dir.y * 6;
+				part->spr->setPosition(ppos);
+			};
+			vec.push_back(p);
 		}
 
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+		//sh->setPosition(shPos);
+		
+		if (sf::Joystick::isConnected(0))
+		{
+			float x = sf::Joystick::getAxisPosition(0, sf::Joystick::X);
+			
+			float y = sf::Joystick::getAxisPosition(0, sf::Joystick::Y);
+		
+			/*float angle = (atan2(x, y) * 180 / 3, 1415);
+			if (x < 25)
+			{
+				sh.move(x, y);
+			}*/
+				
+			
+		}
+		if (sf::Joystick::isButtonPressed(0, 1))
+		{
 			if (shDir.x == 0 && shDir.y == 0) shDir.y = 1;
 
 			RectangleShape * pr = new RectangleShape(Vector2f(8, 8));
@@ -299,10 +397,10 @@ int main()
 				part->spr->setPosition(ppos);
 			};
 			vec.push_back(p);
+
+			printf("ourge");
 		}
-	//	sh->setPosition(shPos);
-
-
+			   
 		myFpsCounter.setPosition(8, 8);
 		myFpsCounter.setFillColor(sf::Color::Red);
 		myFpsCounter.setFont(*font);
@@ -326,17 +424,6 @@ int main()
 
 		//window.draw(shape);//on demande le dessin d' une forme
 		window.draw(myFpsCounter);
-
-		for (int k = 0; k < (int)vec.size(); k++) {
-			Particle * p = vec[vec.size() - k - 1];
-			p->update();
-			if (p->killed) {
-				vec.erase(vec.begin() + k);
-			}
-			else {
-				p->draw(window);
-			}
-		}
 
 		window.display();//ca dessine et ca attend la vsync
 
@@ -365,18 +452,6 @@ int main()
 		walls[3].setSize(Vector2f(winWidth, 16));
 
 		drawBox2D(window);
-	}
-
-	/*if (sf::Joystick::isConnected(0))
-	{
-		float x = sf::Joystick::getAxisPosition(0, sf::Joystick::X);
-		printf("axe x trouvé");
-		float y = sf::Joystick::getAxisPosition(0, sf::Joystick::Y);
-		printf("axe y trouvé");
-		sh->move(x, y);
-		printf("bouge");
-	}*/
-
+	}	
 	return 0;
 }
-
