@@ -241,15 +241,14 @@ int main()
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 2;
 
-
-	sf::RenderWindow window(sf::VideoMode(1280, 720), "SFML works!", sf::Style::Default, settings);
+	sf::RenderWindow window(sf::VideoMode(1280, 720), "SFML works! (ou pas)", sf::Style::Default, settings);
 	window.setVerticalSyncEnabled(true);
 
-	/*sf::CircleShape shape(100.f, (int)(2 * 3.141569 * 100));
+	sf::CircleShape shape(100.f, (int)(2 * 3.141569 * 100));
 	shape.setPosition(30, 30);
 	shape.setFillColor(sf::Color(0xE884D4ff));
 	shape.setOutlineThickness(4);
-	shape.setOutlineColor(sf::Color(0xFF8A70ff));*/
+	shape.setOutlineColor(sf::Color(0xFF8A70ff));
 
 	sf::Clock clock;
 
@@ -314,19 +313,6 @@ int main()
 		while (window.pollEvent(event)) {
 			switch (event.type) {
 			case sf::Event::KeyReleased:
-				if (event.key.code == sf::Keyboard::I)
-					printf("instant fps %f\n", fps[(step - 1) % 4]);
-				if (event.key.code == sf::Keyboard::F)
-					printf("fps %f\n", 0.25f*(fps[0] + fps[1] + fps[2] + fps[3]));
-				break;
-
-				case sf::Event::KeyPressed:
-				{
-					if (event.key.code == sf::Keyboard::F1) mousePos[0] = sf::Vector2f(sf::Mouse::getPosition(window));
-					if (event.key.code == sf::Keyboard::F2) mousePos[1] = sf::Vector2f(sf::Mouse::getPosition(window));
-					if (event.key.code == sf::Keyboard::F3) mousePos[2] = sf::Vector2f(sf::Mouse::getPosition(window));
-					if (event.key.code == sf::Keyboard::F4) mousePos[3] = sf::Vector2f(sf::Mouse::getPosition(window));
-				}
 				break;
 
 			case sf::Event::Closed:
@@ -364,43 +350,10 @@ int main()
 		//sh->setPosition(shPos);
 		
 		if (sf::Joystick::isConnected(0))
-		{
-			float x = sf::Joystick::getAxisPosition(0, sf::Joystick::X);
-			
-			float y = sf::Joystick::getAxisPosition(0, sf::Joystick::Y);
-		
-			/*float angle = (atan2(x, y) * 180 / 3, 1415);
-			if (x < 25)
-			{
-				sh.move(x, y);
-			}*/
-				
-			
+		{					
+						
 		}
-		if (sf::Joystick::isButtonPressed(0, 1))
-		{
-			if (shDir.x == 0 && shDir.y == 0) shDir.y = 1;
 
-			RectangleShape * pr = new RectangleShape(Vector2f(8, 8));
-			pr->setFillColor(Color::Blue);
-			pr->setOrigin(4, 4);
-			//pr->setPosition(sh->getPosition());
-			Particle * p = new Particle(pr);
-
-			float shDirLen = sqrt(shDir.x*shDir.x + shDir.y*shDir.y);
-			p->dir.x = shDir.x / shDirLen;
-			p->dir.y = shDir.y / shDirLen;
-			p->bhv = [](Particle * part) {
-				Vector2f ppos = part->spr->getPosition();
-				ppos.x += part->dir.x * 6;
-				ppos.y += part->dir.y * 6;
-				part->spr->setPosition(ppos);
-			};
-			vec.push_back(p);
-
-			printf("ourge");
-		}
-			   
 		myFpsCounter.setPosition(8, 8);
 		myFpsCounter.setFillColor(sf::Color::Red);
 		myFpsCounter.setFont(*font);
@@ -414,10 +367,7 @@ int main()
 		window.clear(sf::Color(0x9EFFC6ff));//nettoie la frame
 
 		drawMovingSquare(window);
-
-		//drawCurve(window, clock.getElapsedTime().asSeconds() );
-		//drawCatmull(window, clock.getElapsedTime().asSeconds());
-
+		
 		for (int i = 0; i < 4; ++i) {
 			window.draw(walls[i]);
 		}
