@@ -1,0 +1,325 @@
+﻿  ConsoleApplication1.cpp
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(19): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(20): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(21): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(22): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(23): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(24): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(25): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(26): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(30): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(31): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(32): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(33): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(34): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(35): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(36): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(37): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\particle.h(25): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\particle.h(29): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(28): warning C4305: 'argument' : troncation de 'double' à 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(176): warning C4244: 'argument' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(176): warning C4244: 'argument' : conversion de 'const T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(179): warning C4244: 'argument' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(179): warning C4244: 'argument' : conversion de 'const T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(189): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(190): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(191): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(192): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(199): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(200): warning C4305: '+=' : troncation de 'double' à 'float'
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(215): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(303): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(324): warning C4244: 'argument' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(324): warning C4244: 'argument' : conversion de 'const T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(325): warning C4244: 'argument' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(366): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(367): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(368): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(369): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(396): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(397): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(398): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(399): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(426): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(427): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(428): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(429): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(456): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(457): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(458): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(459): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(486): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(487): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(488): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(489): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(522): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(523): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(524): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(525): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(543): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(544): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(545): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\consoleapplication1.cpp(546): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\florian\desktop\jeutank\hae_florian_gp2-master\letank\jeutankflorian\consoleapplication1\collider.hpp(74): warning C4715: 'SquareCollider::GetAngleOfCollision' : les chemins de contrôle ne retournent pas tous une valeur
+  ConsoleApplication1.vcxproj -> C:\Users\Florian\Desktop\JeuTank\HAE_Florian_GP2-master\LeTank\JeuTankFlorian\ConsoleApplication1\Debug\ConsoleApplication1.exe
